@@ -4,6 +4,7 @@ const morgan = require('morgan');
 const bodyParser = require('body-parser');
 
 const dishRouter = require('./routes/dishRouter');
+const promoRouter = require('./routes/promoRouter');
 
 const hostname = 'localhost';
 const port = 3000;
@@ -14,7 +15,7 @@ app.use(morgan('dev'));
 app.use(bodyParser.json());
 
 app.use('/dishes', dishRouter);
-
+app.use('/promotions', promoRouter);
 // app.get('/dishes/:dishId' , (req, res, next) => {
 //     res.end('Will Send details of the dishes : ' + req.params.dishId + ' to you!');
 // });
